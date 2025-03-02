@@ -149,7 +149,7 @@ class CGrasp(nn.Module):
 
         return results
 
-    def sample_poses(self, bps_object, dir_hand=None, normal_hand=None, seed=None):
+    def sample_poses(self, bps_object, dir_hand=None, seed=None):
         bs = bps_object.shape[0]
         np.random.seed(seed)
         dtype = bps_object.dtype

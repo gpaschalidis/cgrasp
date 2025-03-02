@@ -25,9 +25,9 @@ Run the following commands:
 ```bash
 conda create -n cgrasp python=3.9 -y
 conda activate cgrasp
-conda install pytorch=2.3.0 torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install pytorch=2.0.1 torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
-pip install kaolin==0.16.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.3.0_cu121.html
+pip install kaolin==0.16.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.0.1_cu117.html
 pip install git+https://github.com/otaheri/chamfer_distance.git
 pip install git+https://github.com/otaheri/MANO.git
 pip install git+https://github.com/otaheri/bps_torch.git
@@ -40,7 +40,12 @@ pip install -r requirements.txt
 
 
 #### Mano models
-- Download MANO models following the steps on the [MANO repo](https://github.com/otaheri/GrabNet) (skip this part if you already followed this for [GRAB dataset](https://github.com/otaheri/GRAB)).
+- Download MANO models following the steps on the [MANO repo](https://github.com/otaheri/GrabNet) and save the model in the folder models, following the structure below:
+```bash
+     cgrasp
+        └── models
+              └── mano
+```
 
 #### GrabNet data (only required for retraining the model or testing on the test objects)
 - Download the GrabNet dataset (ZIP files) from [this website](http://grab.is.tue.mpg.de). Please do NOT unzip the files yet.
@@ -77,11 +82,11 @@ pip install -r requirements.txt
 
 #### CoarseNet and RefineNet models
 - To test CGrasp you need the pre trained refinenet model from GrabNet. Download this model from the [GRAB website](https://grab.is.tue.mpg.de), 
-and move the model file to the models folder as described below.
+and move the model file to the pretrained folder as described below.
 ```bash
      cgrasp
         └── grabnet
-              └── models
+              └── pretrained
                      └── refinenet.pt
              
         
@@ -90,17 +95,25 @@ and move the model file to the models folder as described below.
 To train CGrasp from scratch use the following command:
 
 ```bash
-
+python train.py cgrasp/configs/cgrasp_cfg.yaml GRAB/data/ models/mano/ save
 ```
 
 ## Generate Grasps
 To try CGrasp and visualize the generated grasps together with the input grasp directions:
 
-- First download our pre-trained model from [here]().
+- First download our pre-trained model from [here]() and place it in the folder pretrained. The folder pretained should have the follwing structure:
+     cgrasp
+        └── grabnet
+              └── pretrained
+                     │ 
+                     ├── cgrasp_cfg.yaml
+                     ├── cgrasp.pt                     
+                     └── refinenet.pt
+                     
 - And then run the following command:
 
 ```bash
-
+python generate_grasps.py GRAB/tools/object_meshes/banana.ply models/mano/ --config_path cgrasp/pretrained/pretrained_cgrasp_cfg.yaml
 ```
 
 ## Citation
