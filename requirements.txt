@@ -8,5 +8,5 @@ trimesh
 pyrender
 PyYAML
 matplotlib==3.8.2
-contourply==1.2.1
+contourpy==1.2.1
 numpy==1.22.4

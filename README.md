@@ -33,7 +33,9 @@ pip install git+https://github.com/otaheri/MANO.git
 pip install git+https://github.com/otaheri/bps_torch.git
 pip install -r requirements.txt
  ```
-
+```bash
+pip install -r requirements.txt
+ ```
 ## Getting started
 
 
