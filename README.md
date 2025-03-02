@@ -87,8 +87,6 @@ and move it in the folder "pretrained" as described below.
         └── cgrasp
               └── pretrained
                      └── refinenet.pt
-             
-        
 ```
 ## Train CGrasp
 To train CGrasp from scratch use the following command:
@@ -109,9 +107,8 @@ To try CGrasp and visualize the generated grasps together with the input grasp d
                      ├── pretrained_cgrasp_cfg.yaml
                      ├── cgrasp.pt                     
                      └── refinenet.pt
- 
 ```                     
-- And then run the following command after picking an object from the path "GRAB/tools/object_meshes":
+- And then run the following command after picking a ".ply" file from the path "GRAB/tools/object_meshes":
 
 ```bash
 python generate_grasps.py GRAB/tools/object_meshes/{obj_name}.ply models/mano/ --config_path cgrasp/pretrained/pretrained_cgrasp_cfg.yaml
