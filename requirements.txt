@@ -9,4 +9,4 @@ pyrender
 PyYAML
 matplotlib==3.8.2
 contourply==1.2.1
-numpy==1.26.0
+numpy==1.22.4

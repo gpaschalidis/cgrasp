@@ -25,9 +25,9 @@ Run the following commands:
 ```bash
 conda create -n cgrasp python=3.9 -y
 conda activate cgrasp
-conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install pytorch=2.3.0 torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
-pip install kaolin==0.16.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.0.1_cu117.html
+pip install kaolin==0.16.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.3.0_cu121.html
 pip install git+https://github.com/otaheri/chamfer_distance.git
 pip install git+https://github.com/otaheri/MANO.git
 pip install git+https://github.com/otaheri/bps_torch.git
