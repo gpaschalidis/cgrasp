@@ -1,0 +1,12 @@
+open3d==0.18.0
+tensorboardX
+torchgeometry
+pillow
+tqdm
+Ninja
+trimesh
+pyrender
+PyYAML
+matplotlib==3.8.2
+contourply==1.2.1
+numpy==1.26.0
