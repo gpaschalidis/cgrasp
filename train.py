@@ -23,19 +23,23 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='CGrasp-Training')
     
-    parser.add_argument('config_path', 
+    parser.add_argument('--config_path', 
+                        required=True,
                         type=str,
                         help='The path to the config file, containing the training configuration details.'
     )
-    parser.add_argument('data_path', 
+    parser.add_argument('--data_path', 
+                        required=True,
                         type=str,
                         help='The path to the folder that contains GrabNet data'
     )
-    parser.add_argument('rhm_path', 
+    parser.add_argument('--rhm_path', 
+                        required=True,
                         type=str,
                         help='The path to the folder containing MANO_RIHGT model'
     )
-    parser.add_argument('save_dir', 
+    parser.add_argument('--save_dir', 
+                        reruired=True,
                         type=str,
                         help='The path to save the results'
     )
