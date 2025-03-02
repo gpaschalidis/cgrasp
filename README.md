@@ -92,7 +92,7 @@ and move it in the folder "pretrained" as described below.
 To train CGrasp from scratch use the following command:
 
 ```bash
-python train.py cgrasp/configs/cgrasp_cfg.yaml GRAB/data/ models/mano/ save
+python train.py --config_path cgrasp/configs/cgrasp_cfg.yaml --data_path GRAB/data/ --rhm_path models/mano/ --save_dir save
 ```
 
 ## Test Grasp
