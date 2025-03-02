@@ -31,8 +31,7 @@ pip install kaolin==0.16.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/t
 pip install git+https://github.com/otaheri/chamfer_distance.git
 pip install git+https://github.com/otaheri/MANO.git
 pip install git+https://github.com/otaheri/bps_torch.git
-pip install -r requirements.txt
- ```
+```
 ```bash
 pip install -r requirements.txt
  ```
@@ -40,7 +39,7 @@ pip install -r requirements.txt
 
 
 #### Mano models
-- Download MANO models following the steps on the [MANO repo](https://github.com/otaheri/GrabNet) and save the model in the folder models, following the structure below:
+- Download MANO models following the steps on the [MANO repo](https://github.com/otaheri/GrabNet) and save them in the folder "models", following the structure below:
 ```bash
      cgrasp
         └── models
@@ -81,11 +80,11 @@ pip install -r requirements.txt
 ```
 
 #### CoarseNet and RefineNet models
-- To test CGrasp you need the pre trained refinenet model from GrabNet. Download this model from the [GRAB website](https://grab.is.tue.mpg.de), 
-and move the model file to the pretrained folder as described below.
+- To test CGrasp you need the pre-trained refinenet model from GrabNet. Download this model from the [GRAB website](https://grab.is.tue.mpg.de), 
+and move it in the folder "pretrained" as described below.
 ```bash
      cgrasp
-        └── grabnet
+        └── cgrasp
               └── pretrained
                      └── refinenet.pt
              
@@ -101,19 +100,19 @@ python train.py cgrasp/configs/cgrasp_cfg.yaml GRAB/data/ models/mano/ save
 ## Generate Grasps
 To try CGrasp and visualize the generated grasps together with the input grasp directions:
 
-- First download our pre-trained model from [here]() and place it in the folder pretrained. The folder pretained should have the follwing structure:
+- First download our pre-trained model from [here]() and place it in the folder "pretrained". The folder "pretained" should have the follwing structure:
      cgrasp
-        └── grabnet
-              └── pretrained
+        └── cgrasp
+               └── pretrained
                      │ 
-                     ├── cgrasp_cfg.yaml
+                     ├── pretrained_cgrasp_cfg.yaml
                      ├── cgrasp.pt                     
                      └── refinenet.pt
                      
-- And then run the following command:
+- And then run the following command after picking an object from the path GRAB/tools/object_meshes:
 
 ```bash
-python generate_grasps.py GRAB/tools/object_meshes/banana.ply models/mano/ --config_path cgrasp/pretrained/pretrained_cgrasp_cfg.yaml
+python generate_grasps.py GRAB/tools/object_meshes/{obj_name}.ply models/mano/ --config_path cgrasp/pretrained/pretrained_cgrasp_cfg.yaml
 ```
 
 ## Citation
