@@ -97,10 +97,11 @@ To train CGrasp from scratch use the following command:
 python train.py cgrasp/configs/cgrasp_cfg.yaml GRAB/data/ models/mano/ save
 ```
 
-## Generate Grasps
+## Test Grasp
 To try CGrasp and visualize the generated grasps together with the input grasp directions:
 
 - First download our pre-trained model from [here]() and place it in the folder "pretrained". The folder "pretained" should have the follwing structure:
+```bash
      cgrasp
         └── cgrasp
                └── pretrained
@@ -108,8 +109,9 @@ To try CGrasp and visualize the generated grasps together with the input grasp d
                      ├── pretrained_cgrasp_cfg.yaml
                      ├── cgrasp.pt                     
                      └── refinenet.pt
-                     
-- And then run the following command after picking an object from the path GRAB/tools/object_meshes:
+ 
+```                     
+- And then run the following command after picking an object from the path "GRAB/tools/object_meshes":
 
 ```bash
 python generate_grasps.py GRAB/tools/object_meshes/{obj_name}.ply models/mano/ --config_path cgrasp/pretrained/pretrained_cgrasp_cfg.yaml
