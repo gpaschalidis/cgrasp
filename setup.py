@@ -7,8 +7,10 @@ def setup_package():
         version="0.1.0", 
         author="Georgios Paschalidis", 
         description="CGrasp model",
+        long_description=open("README.md").read(),
+        author_email="g.paschalidis@uva.nl",
         url="https://github.com/gpaschalidis/cgrasp",
-        packages=find_packages(exclude=["docs", "scripts"]),  
+        packages=find_packages(include=["tests", "models", "tools"]),  
         install_requires=[], 
         classifiers=[
             "Intended Audience :: Science/Research",
