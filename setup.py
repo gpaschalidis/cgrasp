@@ -10,7 +10,7 @@ def setup_package():
         long_description=open("README.md").read(),
         author_email="g.paschalidis@uva.nl",
         url="https://github.com/gpaschalidis/cgrasp",
-        packages=find_packages(include=["tests", "models", "tools"]),  
+        packages=find_packages(include=["cgrasp","cgrasp.*"]),  
         install_requires=[], 
         classifiers=[
             "Intended Audience :: Science/Research",
