@@ -75,7 +75,6 @@ pip install -r requirements.txt
          └── subject_meshes
 ```
 
-#### CoarseNet and RefineNet models
 - To test CGrasp you need the pre-trained refinenet model from GrabNet. Download this model from the [GRAB website](https://grab.is.tue.mpg.de), 
 and move it in the folder "pretrained" as described below.
 ```bash
@@ -94,7 +93,7 @@ python train.py --config_path cgrasp/configs/cgrasp_cfg.yaml --data_path GRAB/da
 ## Test Grasp
 To try CGrasp and visualize the generated grasps together with the input grasp directions:
 
-- First download our pre-trained model from [here]() and place it in the folder "pretrained". The folder "pretained" should have the follwing structure:
+- First download our pre-trained model from [here](https://docs.google.com/forms/d/1tpUAQms4sAHOj87bsKhPAsCffCj74Y0cD-ywi7pxB_E/edit) and place it in the folder "pretrained". The folder "pretrained" should have the follwing structure:
 ```bash
      cgrasp
         └── cgrasp
